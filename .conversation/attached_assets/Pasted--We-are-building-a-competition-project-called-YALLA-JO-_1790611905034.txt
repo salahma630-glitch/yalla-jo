@@ -1,0 +1,109 @@
+:
+
+We are building a competition project called YALLA JO.
+
+YALLA JO is a Jordan tourism web experience focused on discovering hidden stories and meaningful stops along a journey, not just visiting a destination.
+
+IMPORTANT:
+This is a competition project with a strict technical requirement.
+
+TECH STACK — MUST FOLLOW:
+- HTML
+- CSS
+- Vanilla JavaScript
+- Firebase
+Do NOT use React, Vue, Angular, Next.js, TypeScript, or any frontend framework.
+
+I have imported our existing Figma design.
+Use the imported Figma design as the PRIMARY visual reference.
+
+DO NOT redesign the project from scratch.
+DO NOT replace the existing visual identity with a generic AI-generated design.
+Preserve the layout, colors, typography, spacing, cards, buttons, illustrations, and overall visual language as closely as possible.
+
+YALLA JO visual identity:
+- Soft Green: #A0C2AE
+- Deep Plum: #673147
+- Warm cream/off-white backgrounds
+- Elegant Jordan-inspired visual style
+- Modern, minimal, editorial and travel-focused
+- No childish/generic tourism-app appearance
+
+CORE USER JOURNEY:
+
+Welcome
+→ Personalization
+→ Choose Destination
+→ Search / Recommendations
+→ Destination Overview
+→ Route Map
+→ Stops Along the Way
+→ Place / Story
+→ Challenge
+→ Check-in
+→ Points
+→ Digital Stamp
+→ Explorer Passport
+→ My Journey / Progress
+
+TEAM RESPONSIBILITIES:
+
+Member 1:
+- Global UI foundation
+- Welcome/Landing
+- Navbar
+- Destination cards
+- Search UI
+- Responsive foundation
+
+Member 2:
+- Personalization
+- Interests
+- Travel style
+- Time & budget
+- Accessibility
+- Choose your path
+- Search destinations
+- Recommendations
+
+Member 3:
+- Destination overview
+- Stops content
+- Place/story experience
+- Practical information
+- Challenge UI
+- Check-in UI
+
+Member 4:
+- Interactive route map
+- Explorer Passport
+- Digital Stamps
+- Points
+- My Journey
+- Firebase
+- Final integration
+
+For now, focus ONLY on the FRONTEND STRUCTURE AND VISUAL IMPLEMENTATION.
+
+FIRST BUILD:
+1. Welcome / Landing page
+2. Global Navbar
+3. Destination Cards component
+4. Search Bar and filter chips
+5. Basic routing/navigation between pages
+6. Responsive mobile layout
+
+Create a clean project structure with separate HTML/CSS/JS files where appropriate.
+
+Use reusable CSS classes and reusable JavaScript functions.
+Do not duplicate the same component unnecessarily.
+
+IMPORTANT:
+Do not implement Firebase yet.
+Do not invent extra features.
+Do not create fake backend functionality.
+Do not change the project's concept.
+
+Before making major changes, inspect the imported Figma design and existing project files and explain briefly what you found and what you are going to build.
+
+Then implement the first frontend version.

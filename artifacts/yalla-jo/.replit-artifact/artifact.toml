@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "YALLA JO"
+description = "A Jordan travel discovery experience that helps people find meaningful stops, hidden stories, and personal journeys across the country."
+version = "1.0.0"
+id = "artifacts/yalla-jo"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22513
+
+[services.development]
+run = "pnpm --filter @workspace/yalla-jo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/yalla-jo", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/yalla-jo/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22513"
+BASE_PATH = "/"
