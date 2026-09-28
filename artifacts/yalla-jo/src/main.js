@@ -9,7 +9,8 @@ const destinations = [
     rating: '4.9',
     stops: 8,
     points: 145,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Al_Khazneh_Petra_edit_2.jpg',
+    image: '/images/destinations/petra.jpg',
+    imageAlt: 'The Treasury carved into Petra’s rose-coloured cliffs',
     tint: 'rose',
     icon: 'arch',
     tagline: 'A city carved into rose-coloured cliffs.',
@@ -27,7 +28,8 @@ const destinations = [
     rating: '4.8',
     stops: 6,
     points: 120,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Wadi_Rum%2C_Jordan.jpg',
+    image: '/images/destinations/wadi-rum.jpg',
+    imageAlt: 'Sandstone formations in Wadi Rum',
     tint: 'sand',
     icon: 'sun',
     tagline: 'The quiet, copper-coloured edge of the world.',
@@ -45,7 +47,8 @@ const destinations = [
     rating: '4.7',
     stops: 5,
     points: 98,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Jerash_oval.jpg',
+    image: '/images/destinations/jerash.jpg',
+    imageAlt: 'The Arch of Hadrian in Jerash',
     tint: 'stone',
     icon: 'columns',
     tagline: 'Where an ancient city still holds its rhythm.',
@@ -63,7 +66,8 @@ const destinations = [
     rating: '4.6',
     stops: 4,
     points: 76,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Dead_Sea%2C_Jordan.jpg',
+    image: '/images/destinations/dead-sea.jpg',
+    imageAlt: 'The Dead Sea shoreline in Jordan',
     tint: 'water',
     icon: 'wave',
     tagline: 'A horizon that makes time feel weightless.',
@@ -81,7 +85,8 @@ const destinations = [
     rating: '4.5',
     stops: 5,
     points: 84,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Madaba_map.jpg',
+    image: '/images/destinations/madaba.jpg',
+    imageAlt: 'A mosaic detail in Madaba',
     tint: 'tile',
     icon: 'mosaic',
     tagline: 'Small streets, bright tiles, deep history.',
@@ -99,7 +104,8 @@ const destinations = [
     rating: '4.6',
     stops: 4,
     points: 88,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/1/13/Ajloun_Castle_2009.jpg',
+    image: '/images/destinations/ajloun.jpg',
+    imageAlt: 'Ajloun Castle in the hills of northern Jordan',
     tint: 'forest',
     icon: 'castle',
     tagline: 'Pine-scented hills and a castle with a view.',
@@ -139,7 +145,7 @@ function nav(active = '') {
       <a href="#/discover">Passport</a>
     </nav>
     <div class="header-actions"><span class="language">عربي <span class="language-dot"></span></span><a class="button button-plum button-small" href="#/discover">Start journey ${icon('arrow', 14)}</a></div>
-    <button class="menu-button" type="button" aria-label="Open navigation" data-menu>${icon('menu', 21)}</button>
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu>${icon('menu', 21)}</button>
   </header>`;
 }
 
@@ -178,7 +184,7 @@ function landing() {
 
 function destinationCard(d, size = '') {
   return `<a class="destination-card ${size}" href="#/destination/${d.slug}" data-destination="${d.slug}">
-    <div class="card-image tint-${d.tint}" style="--image: url('${d.image}')"><span class="card-rating">${d.rating}</span><span class="card-icon">${icon(d.icon, 15)}</span></div>
+    <div class="card-image tint-${d.tint}"><img class="destination-photo" src="${d.image}" alt="${d.imageAlt}" loading="lazy"><span class="image-placeholder" aria-hidden="true">Jordan destination image</span><span class="card-rating">${d.rating}</span><span class="card-icon">${icon(d.icon, 15)}</span></div>
     <div class="card-body"><div class="card-kicker">${d.category} <span>·</span> ${d.region.split(' · ')[0]}</div><h3>${d.name}</h3><p>${d.tagline}</p><div class="card-meta"><span>${icon('pin', 13)} ${d.stops} stops along the way</span><span>${d.points} pts</span></div></div>
   </a>`;
 }
@@ -196,7 +202,7 @@ function overview(slug) {
   const d = destinations.find(item => item.slug === slug) || destinations[0];
   return `<div class="page page-overview">${nav()}<main class="overview-main shell">
     <a class="back-link" href="#/discover">${icon('back', 15)} Back to destinations</a>
-    <section class="overview-hero tint-${d.tint}" style="--image: url('${d.image}')"><div class="overview-hero-content"><span class="journey-pill">${d.category} · Jordan</span><h1>${d.name}</h1><p>${d.tagline}</p><div class="overview-rating">${icon(d.icon, 15)} <strong>${d.rating}</strong><span>One of Jordan’s essential stops</span></div></div></section>
+    <section class="overview-hero tint-${d.tint}"><img class="overview-photo" src="${d.image}" alt="${d.imageAlt}"><span class="image-placeholder overview-placeholder" aria-hidden="true">Jordan destination image</span><div class="overview-hero-content"><span class="journey-pill">${d.category} · Jordan</span><h1>${d.name}</h1><p>${d.tagline}</p><div class="overview-rating">${icon(d.icon, 15)} <strong>${d.rating}</strong><span>One of Jordan’s essential stops</span></div></div></section>
     <section class="overview-content">
       <div class="overview-story"><span class="section-kicker">A little context</span><h2>${d.description}</h2><p class="story-why">${icon('compass', 17)} <strong>Why it suits you</strong></p><div class="why-tags"><span>${d.category}</span><span>Slow travel</span><span>Local stories</span></div><p class="why-copy">${d.why}</p>
         <div class="route-heading"><span class="section-kicker">Stops along the way</span><span>${d.stops} places to notice</span></div><div class="route-list">${d.route.map((stop, i) => `<div class="route-stop"><span class="route-dot ${i === 0 ? 'filled' : ''}">${i + 1}</span><span><strong>${stop.split(' · ')[0]}</strong><small>${stop.split(' · ')[1]}</small></span><b>+${15 + i * 5} pts</b></div>`).join('')}</div>
@@ -246,7 +252,21 @@ function bindInteractions() {
   }));
   document.querySelector('[data-reset]')?.addEventListener('click', () => { if (search) search.value = ''; filter = 'All'; document.querySelector('[data-filter="All"]')?.click(); update(); });
   const menuButton = document.querySelector('[data-menu]');
-  menuButton?.addEventListener('click', () => document.querySelector('.main-nav')?.classList.toggle('open'));
+  menuButton?.addEventListener('click', () => {
+    const nav = document.querySelector('.main-nav');
+    const isOpen = nav?.classList.toggle('open') ?? false;
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+  document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => {
+    document.querySelector('.main-nav')?.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', 'Open navigation');
+  }));
+  document.querySelectorAll('.destination-photo, .overview-photo').forEach((image) => image.addEventListener('error', () => {
+    image.closest('.card-image, .overview-hero')?.classList.add('image-missing');
+    image.remove();
+  }));
 }
 
 window.addEventListener('hashchange', render);

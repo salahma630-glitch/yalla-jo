@@ -107,3 +107,55 @@ h1 em, h2 em { font-family: 'Instrument Serif', serif; color: var(--plum); font-
 @media (max-width: 500px) {
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 17px; margin-bottom: 35px; }.hero-stats { gap: 24px; }.hero-stats strong { font-size: 23px; }.hero-art { height: 285px; }.landscape { top: 53px; bottom: 54px; }.landmark { bottom: 111px; }.mountain { bottom: 83px; }.next-stop { left: 22px; bottom: 13px; }.feature-grid { grid-template-columns: 1fr; }.feature-grid .destination-card.large { grid-column: auto; }.feature-grid .destination-card.large .card-image, .destination-grid .card-image { height: 190px; }.filters { gap: 6px; }.filter-label { width: 100%; margin-bottom: 3px; }.destination-grid { grid-template-columns: 1fr; }.page-heading .journey-pill { position: static; }.page-heading h1 { margin-top: 18px; }.search-count { display: none; }.overview-hero { height: 310px; }.overview-hero-content h1 { font-size: 48px; }.overview-rating span { display: none; }.overview-content { padding-left: 0; padding-right: 0; }.quote-section blockquote { font-size: 27px; }
 }
+
+/* Destination media stays explicit and asset-ready: real photos first, structured fallback second. */
+.card-image::before,
+.overview-hero::before { display: none; }
+.card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 40%, rgba(40, 28, 31, .28));
+}
+.destination-photo,
+.overview-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.destination-photo { transition: transform .5s; }
+.destination-card:hover .destination-photo { transform: scale(1.04); }
+.image-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  place-items: center;
+  padding: 20px;
+  color: var(--plum);
+  background: #e2eee6;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.image-missing .image-placeholder { display: grid; }
+.image-missing::after { display: none; }
+.card-rating,
+.card-icon { z-index: 2; }
+.overview-hero {
+  background: #7c8f81;
+}
+.overview-photo { z-index: 0; }
+.overview-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(30, 24, 28, .82), rgba(30, 24, 28, .03) 75%);
+}
+.overview-placeholder { z-index: 0; }
+.overview-hero-content { z-index: 1; }
