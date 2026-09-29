@@ -202,9 +202,9 @@ function nav(active = '') {
   return `<header class="site-header">
     <a class="brand" href="#/" aria-label="Yalla Jo home"><span class="brand-mark">${icon('pin', 16)}</span><span>YALLA JO</span></a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a class="${active === 'discover' ? 'active' : ''}" href="#/discover">Discover</a>
-      <a href="#/discover" aria-label="My journey, coming soon">My journey</a>
-      <a href="#/discover" aria-label="Passport, coming soon">Passport</a>
+      <a class="${active === 'discover' ? 'active' : ''}" href="#/discover" ${active === 'discover' ? 'aria-current="page"' : ''}>Discover</a>
+      <a href="#/discover">My journey</a>
+      <a href="#/discover">Passport</a>
     </nav>
     <div class="header-actions"><span class="language">عربي <span class="language-dot"></span></span><a class="button button-plum button-small" href="#/personalize">Start journey ${icon('arrow', 14)}</a></div>
     <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" data-menu>${icon('menu', 21)}</button>
@@ -212,7 +212,7 @@ function nav(active = '') {
 }
 
 function footer() {
-  return `<footer class="site-footer"><span>YALLA JO</span><span>Made for the curious traveller · Jordan</span><span>© 2024</span></footer>`;
+  return `<footer class="site-footer"><span>YALLA JO</span><span>Made for the curious traveller · Jordan</span><span>© 2026</span></footer>`;
 }
 
 function destinationCard(d, size = '') {
@@ -303,8 +303,8 @@ function discover(mode = '') {
   const visibleDestinations = recommendedDestinations(mode);
   return `<div class="page page-discover">${nav('discover')}<main class="discover-main shell">
     <div class="page-heading reveal"><a class="back-link" href="${personal ? '#/path' : '#/'}">${icon('back', 15)} ${personal ? 'Back to your path' : 'Back home'}</a><span class="journey-pill">03 / 03 · Destinations</span><h1>${personal ? 'A few places for you' : 'Search destinations'}</h1><p>${personal ? 'A starting point shaped by your feeling for the road. Follow the one that makes you pause.' : 'Find the places that make you curious — then see what is waiting along the way.'}</p></div>
-    <div class="search-wrap reveal reveal-delay">${icon('search', 19)}<input id="destination-search" type="search" placeholder="Search Jordan’s wonders..." autocomplete="off" aria-label="Search destinations"><span class="search-count" id="search-count">6 places</span></div>
-    <div class="filters reveal reveal-delay-2" role="group" aria-label="Filter destinations"><span class="filter-label">Browse by</span><button class="filter-chip active" data-filter="All" type="button">All places</button><button class="filter-chip" data-filter="History" type="button">${icon('arch', 14)} History</button><button class="filter-chip" data-filter="Nature" type="button">${icon('wave', 14)} Nature</button><button class="filter-chip" data-filter="Culture" type="button">${icon('mosaic', 14)} Culture</button><button class="filter-chip" data-filter="Adventure" type="button">${icon('sun', 14)} Adventure</button></div>
+     <div class="search-wrap reveal reveal-delay">${icon('search', 19)}<input id="destination-search" type="search" placeholder="Search Jordan’s wonders..." autocomplete="off" aria-label="Search destinations"><span class="search-count" id="search-count" aria-live="polite">6 places</span></div>
+     <div class="filters reveal reveal-delay-2" role="group" aria-label="Filter destinations"><span class="filter-label">Browse by</span><button class="filter-chip active" data-filter="All" type="button" aria-pressed="true">All places</button><button class="filter-chip" data-filter="History" type="button" aria-pressed="false">${icon('arch', 14)} History</button><button class="filter-chip" data-filter="Nature" type="button" aria-pressed="false">${icon('wave', 14)} Nature</button><button class="filter-chip" data-filter="Culture" type="button" aria-pressed="false">${icon('mosaic', 14)} Culture</button><button class="filter-chip" data-filter="Adventure" type="button" aria-pressed="false">${icon('sun', 14)} Adventure</button></div>
     <div class="destination-grid" id="destination-grid">${visibleDestinations.map((d) => destinationCard(d)).join('')}</div><div class="empty-state" id="empty-state" hidden><span class="empty-icon">${icon('compass', 24)}</span><h2>No hidden stop found</h2><p>Try a different word or browse all of Jordan.</p><button class="button button-outline" data-reset type="button">Show all places</button></div>
     </main>${footer()}</div>`;
 }
@@ -421,7 +421,7 @@ function challengePage(d) {
 
 function checkinPage(d) {
   return destinationPage(d, 'checkin', 'Bring it home', 'A final pause for the detail, feeling, or story you want to keep.', `<section class="checkin-layout">
-    <article class="checkin-card"><span class="section-kicker">A small reflection</span><h2>What did you notice at ${d.name}?</h2><p>Choose the sentence that comes closest. You can always change it before you leave this screen.</p><form data-checkin-form><div class="reflection-options"><button type="button" data-reflection="A detail in the landscape" aria-pressed="false">A detail in the landscape</button><button type="button" data-reflection="A story I want to remember" aria-pressed="false">A story I want to remember</button><button type="button" data-reflection="A moment shared with someone" aria-pressed="false">A moment shared with someone</button></div><button class="button button-plum" type="submit" disabled data-checkin-submit>Keep this feeling ${icon('arrow', 15)}</button></form><div class="checkin-success" data-checkin-success hidden><span class="success-icon">${icon('check', 17)}</span><div><strong>That is enough for today.</strong><p>Your reflection is kept in this moment, not sent anywhere.</p></div></div></article>
+     <article class="checkin-card"><span class="section-kicker">A small reflection</span><h2>What did you notice at ${d.name}?</h2><p>Choose the sentence that comes closest. You can always change it before you leave this screen.</p><form data-checkin-form><div class="reflection-options" role="group" aria-label="Choose what you want to remember"><button type="button" data-reflection="A detail in the landscape" aria-pressed="false">A detail in the landscape</button><button type="button" data-reflection="A story I want to remember" aria-pressed="false">A story I want to remember</button><button type="button" data-reflection="A moment shared with someone" aria-pressed="false">A moment shared with someone</button></div><button class="button button-plum" type="submit" disabled data-checkin-submit>Keep this feeling ${icon('arrow', 15)}</button></form><div class="checkin-success" data-checkin-success hidden><span class="success-icon">${icon('check', 17)}</span><div><strong>That is enough for today.</strong><p>Your reflection is kept in this moment, not sent anywhere.</p></div></div></article>
     <aside class="checkin-aside"><div class="checkin-line"></div><span class="section-kicker">The road continues</span><h3>Whenever you are ready, there is another turn.</h3><a class="text-link" href="#/discover">Discover another place ${icon('arrow', 14)}</a></aside>
   </section>`);
 }
@@ -491,6 +491,7 @@ function bindDiscover() {
   search?.addEventListener('input', update);
   document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => {
     document.querySelectorAll('[data-filter]').forEach((item) => item.classList.remove('active'));
+    document.querySelectorAll('[data-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
     button.classList.add('active');
     filter = button.dataset.filter;
     update();

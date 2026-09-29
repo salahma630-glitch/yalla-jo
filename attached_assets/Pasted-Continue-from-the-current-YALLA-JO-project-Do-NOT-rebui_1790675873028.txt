@@ -1,0 +1,149 @@
+Continue from the current YALLA JO project.
+
+Do NOT rebuild the website.
+Do NOT change the overall visual identity.
+Do NOT introduce backend functionality.
+
+The frontend flow is already implemented. Now make the website feel like a **final competition-ready product**.
+
+### 1. Visual polish
+
+Go through every existing screen and improve only what is necessary:
+
+* Typography hierarchy
+* Spacing
+* Alignment
+* Button consistency
+* Card proportions
+* Border radius
+* Shadows
+* Section spacing
+* Image proportions
+* Icons
+* Hover states
+* Active states
+* Focus states
+
+Keep the existing YALLA JO visual identity exactly as the foundation.
+
+The result should feel polished, modern, premium, and intentionally designed.
+
+### 2. Homepage
+
+Give the homepage the strongest visual finish.
+
+Make sure it clearly communicates:
+
+* What YALLA JO is
+* What the user can do
+* Where the user should start
+
+The main CTA should be visually obvious.
+
+Keep the Jordan tourism identity present without making the page feel crowded.
+
+### 3. Personalization
+
+Make the personalization experience feel intentional and easy.
+
+Selections should have clear:
+
+* Selected state
+* Hover state
+* Continue state
+* Visual feedback
+
+The user should always understand what they selected and what happens next.
+
+### 4. Destination experience
+
+Polish the destination flow:
+
+Destination Overview
+→ Stops
+→ Story
+→ Practical Information
+→ Challenge
+→ Check-in
+
+Make these screens feel like different parts of the SAME destination experience.
+
+Use consistent navigation between them.
+
+### 5. Micro-interactions
+
+Add subtle frontend-only interactions where appropriate:
+
+* Hover animations
+* Card transitions
+* Button feedback
+* Smooth scrolling
+* Menu transitions
+* Carousel transitions
+* Selected-state animations
+
+Keep animations subtle and fast.
+
+Do NOT over-animate the website.
+
+### 6. Mobile experience
+
+Do a dedicated mobile pass.
+
+Do not simply shrink the desktop layout.
+
+Make sure:
+
+* Navigation is usable
+* Buttons are easy to tap
+* Cards are readable
+* Images crop correctly
+* Text doesn't overflow
+* Sections have comfortable spacing
+* Horizontal content can scroll naturally when appropriate
+
+### 7. Accessibility basics
+
+Add reasonable frontend accessibility improvements:
+
+* Semantic HTML where possible
+* Alt text for meaningful images
+* Visible focus states
+* Proper button/link elements
+* Sufficient text contrast
+* Form labels where needed
+
+### 8. Final cleanup
+
+Remove:
+
+* Unused placeholder elements
+* Debug text
+* Console logs
+* Broken links
+* Duplicate styles
+* Obvious dead code
+* Temporary test content
+
+Do NOT remove anything that is required for the current frontend flow.
+
+### 9. Final presentation test
+
+Treat this as if you are seeing the project for the first time as a competition judge.
+
+Open Preview and go through the entire experience from the beginning.
+
+Check whether the website feels:
+
+* Clear
+* Consistent
+* Professional
+* Responsive
+* Easy to navigate
+* Visually coherent
+
+Fix any obvious issues you find.
+
+Do NOT implement Firebase, backend, Interactive Route Map, Explorer Passport, Digital Stamps, Points/Rewards, or My Journey logic.
+
+When the frontend looks polished and works correctly, STOP.
