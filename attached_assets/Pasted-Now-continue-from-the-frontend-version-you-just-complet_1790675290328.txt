@@ -1,0 +1,150 @@
+Now continue from the frontend version you just completed.
+
+Do NOT start over and do NOT redesign the existing work.
+
+Your next task is to do a complete frontend quality + integration pass across the entire YALLA JO website.
+
+1. Check the complete user flow
+
+Test and fix the flow:
+
+Welcome
+→ Personalization
+→ Choose Your Path
+→ Search / Recommendations
+→ Destination Overview
+→ Stops
+→ Story
+→ Practical Information
+→ Challenge
+→ Check-in
+
+Make sure the user can actually move naturally from one screen to the next without dead ends.
+
+2. Fix all interactions
+
+Verify that:
+
+- Every button has a purpose and works.
+- Every navigation link goes to the correct screen.
+- Back buttons work correctly.
+- Navbar navigation works consistently.
+- Search works.
+- Filters work.
+- Destination cards open the correct destination.
+- Personalization choices are saved and remain available when moving between screens.
+- "Continue", "Explore", "Start", "Next", and similar CTA buttons behave logically.
+- Any modal, dropdown, menu, tab, carousel, or interactive element currently present actually works.
+
+Do not create fake interactions that do nothing.
+
+3. Make the screens feel like ONE product
+
+Review spacing, typography, buttons, cards, navigation, borders, shadows, icons, and responsive behavior across all pages.
+
+Keep the existing YALLA JO visual identity.
+
+Do NOT introduce a new design system unless something is clearly inconsistent.
+
+The website should feel like one polished tourism product, not a collection of separate pages.
+
+4. Improve content consistency
+
+Make sure destination names, descriptions, categories, labels, buttons, and navigation terminology are consistent throughout the website.
+
+Avoid placeholder text such as:
+
+- Lorem ipsum
+- "Test"
+- "Coming soon"
+- Broken links
+- Empty cards
+- Dummy buttons
+
+If content is needed for the frontend, use realistic Jordan tourism content.
+
+5. Responsive check
+
+Make sure the entire frontend works properly on:
+
+- Desktop
+- Tablet
+- Mobile
+
+Pay special attention to:
+
+- Navbar
+- Hero sections
+- Destination cards
+- Carousels
+- Forms
+- Buttons
+- Long text
+- Images
+- Grids
+- Horizontal scrolling sections
+
+Nothing should overflow the screen or break the layout.
+
+6. Code quality
+
+Keep the project:
+
+- HTML
+- CSS
+- Vanilla JavaScript
+
+Do not introduce React, Vue, Angular, Tailwind, Bootstrap, or another frontend framework.
+
+Keep the existing file structure unless changing it is genuinely necessary.
+
+Avoid duplicating large amounts of CSS or JavaScript.
+
+Reuse components/patterns wherever practical, especially:
+
+- Navbar
+- Destination cards
+- Buttons
+- Sections
+- Modals
+- Filters
+
+7. Important scope restriction
+
+Still DO NOT implement:
+
+- Firebase
+- Backend
+- Authentication
+- Final Interactive Route Map
+- Explorer Passport
+- Digital Stamps
+- Points / Rewards
+- My Journey logic
+- Real user accounts
+- Database functionality
+
+These are intentionally postponed.
+
+You may create visual placeholders only where necessary for future integration, but do not implement the actual logic.
+
+8. Final testing
+
+Before stopping:
+
+1. Open the project in Preview.
+2. Navigate through the entire user flow.
+3. Test the important buttons and links.
+4. Test personalization persistence.
+5. Test search and filters.
+6. Test mobile responsiveness.
+7. Fix any console errors.
+8. Fix broken paths, missing assets, and layout issues.
+9. Make sure the project still runs correctly after all changes.
+10. Make sure the live deployment works.
+
+Do not stop after simply checking the code.
+
+Actually test the frontend.
+
+When everything is working, STOP.
